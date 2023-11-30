@@ -1,0 +1,8 @@
+# https://taskfile.dev
+version: "3"
+tasks:
+  build: npm run build
+  setup:
+    cmds:
+      - npm init -y
+      - npm i --save-dev webpack webpack-cli

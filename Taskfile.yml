@@ -1,6 +1,11 @@
 # https://taskfile.dev
 version: "3"
 tasks:
+  t: npm test
+  run-server: node server.js
+
+  install-jest: npm install --save-dev jest
+
   install-asdf-nodejs:
     desc: install nodejs as https://github.com/asdf-vm/asdf-nodejs
     cmds:
