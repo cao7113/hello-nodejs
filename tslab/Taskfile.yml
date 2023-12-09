@@ -1,0 +1,24 @@
+# https://taskfile.dev
+version: "3"
+tasks:
+  # run in dev
+  dev: npm run start:dev
+  # run in production mode
+  start: npm run start
+  build: npm run build
+  lint: npm run lint
+  setup:
+    - |
+      npm init -y
+      npm i -D typescript
+
+      # ./node_modules/.bin/tsc --init
+      npx tsc --init --rootDir src --outDir dist \
+        --esModuleInterop --resolveJsonModule --lib es6 \
+        --module commonjs --allowJs true --noImplicitAny true
+
+      npm install --save-dev ts-node @types/node nodemon
+      npm install --save-dev rimraf
+      npm install --save-dev eslint
+      npx eslint --init
+      # npx eslint . --ext .ts
